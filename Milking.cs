@@ -28,18 +28,14 @@ namespace MyOpenModPlugin
             m_Logger = logger;
         }
 
-        protected override async UniTask OnLoadAsync()
+        protected override UniTask OnLoadAsync()
         {
-            // await UniTask.SwitchToMainThread(); uncomment if you have to access Unturned or UnityEngine APIs
-            m_Logger.LogInformation("Hello World!");
-
-            // await UniTask.SwitchToThreadPool(); // you can switch back to a different thread
+            return UniTask.CompletedTask;
         }
 
-        protected override async UniTask OnUnloadAsync()
+        protected override UniTask OnUnloadAsync()
         {
-            // await UniTask.SwitchToMainThread(); uncomment if you have to access Unturned or UnityEngine APIs
-            m_Logger.LogInformation(m_StringLocalizer["plugin_events:plugin_stop"]);
+            return UniTask.CompletedTask;
         }
     }
 }
